@@ -12,6 +12,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "crypto-js": "^4.2.0",
     "staticrypt": "^3.5.4"
   }
 }

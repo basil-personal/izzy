@@ -4,7 +4,7 @@
  * The password is passed via env var so it never appears in committed files.
  */
 const fs = require('fs');
-const crypto = require('crypto');
+const CryptoJS = require('crypto-js');
 
 const PASSWORD = process.env.STATICRYPT_PW;
 if (!PASSWORD) {
@@ -14,19 +14,9 @@ if (!PASSWORD) {
 
 const source = fs.readFileSync('_source.html', 'utf8');
 
-// Encrypt with CryptoJS-compatible format (OpenSSL):
-// "Salted__" + 8-byte salt + ciphertext
-// CryptoJS.AES.decrypt() on the client can read this directly from base64.
-const salt = crypto.randomBytes(8);
-const keyIv = crypto.pbkdf2Sync(PASSWORD, salt, 10000, 48, 'md5');
-const key = keyIv.subarray(0, 32);
-const iv = keyIv.subarray(32, 48);
-const cipher = crypto.createCipheriv('aes-256-cbc', key, iv);
-let ct = cipher.update(source, 'utf8');
-ct = Buffer.concat([ct, cipher.final()]);
-// OpenSSL format: "Salted__" + salt + ciphertext, then base64 the whole thing
-const openssl = Buffer.concat([Buffer.from('Salted__'), salt, ct]);
-const encrypted = openssl.toString('base64');
+// Encrypt using the same CryptoJS library used on the client side.
+// This guarantees the key derivation (EvpKDF) matches exactly.
+const encrypted = CryptoJS.AES.encrypt(source, PASSWORD).toString();
 
 const html = `<!DOCTYPE html>
 <html lang="en">
@@ -156,7 +146,7 @@ function doDecrypt(){
   document.getElementById("go").disabled=true;
   setTimeout(function(){
     try{
-      var dec=CryptoJS.AES.decrypt(ED,pw,{kdf:CryptoJS.kdf.OpenSSL,hasher:CryptoJS.algo.MD5}).toString(CryptoJS.enc.Utf8);
+      var dec=CryptoJS.AES.decrypt(ED,pw).toString(CryptoJS.enc.Utf8);
       if(!dec||dec.length<50){throw new Error("bad")}
       document.open();document.write(dec);document.close();
     }catch(e){
