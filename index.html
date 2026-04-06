@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>~*~IzZy'S bAcHeLorEtTe~*~ .:. U r InViTeD .:.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+/* ====== CSS RESET & BASE ====== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --hot-pink: #FF69B4;
+  --barbie-pink: #FF1493;
+  --baby-pink: #FFB6C1;
+  --lime: #32CD32;
+  --cyan: #00CED1;
+  --baby-blue: #87CEEB;
+  --lavender: #E6E6FA;
+  --yellow: #FFD700;
+  --aim-yellow: #FFFF00;
+  --aim-buddy: #FFFFCC;
+  --aim-blue: #0000FF;
+  --y2k-silver: #C0C0C0;
+  --purple: #9B59B6;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  background: #FFC0CB;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Custom cursor only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><text y='16' font-size='16'>%F0%9F%92%96</text></svg>") 10 10, auto;
+  }
+}
+
+/* ====== SPARKLE CANVAS ====== */
+#sparkle-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ====== MARQUEE BANNER ====== */
+.marquee-banner {
+  background: linear-gradient(90deg, var(--barbie-pink), var(--purple), var(--hot-pink));
+  color: var(--aim-yellow);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid var(--yellow);
+}
+.marquee-banner .marquee-inner {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ====== HERO / AIM SIGN ON ====== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255,105,180,0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(135,206,235,0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(155,89,182,0.2) 0%, transparent 50%),
+    linear-gradient(180deg, #FFE4F0, #FFC0CB, #FFB6C1);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><text y='28' font-size='24' opacity='0.15'>✨</text></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><text y='40' font-size='28' opacity='0.1'>🦋</text></svg>");
+  background-size: 80px 80px, 120px 120px;
+  animation: bgFloat 15s ease-in-out infinite;
+}
+
+@keyframes bgFloat {
+  0%, 100% { background-position: 0 0, 60px 60px; }
+  50% { background-position: 40px 20px, 20px 80px; }
+}
+
+.floating-emojis {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-emoji {
+  position: absolute;
+  font-size: 24px;
+  animation: floatUp 8s ease-in infinite;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* AIM Window */
+.aim-window {
+  background: var(--y2k-silver);
+  border: 2px solid #808080;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.3), inset 1px 1px 0 #fff;
+  width: 90%;
+  max-width: 380px;
+  position: relative;
+  z-index: 10;
+}
+
+.aim-titlebar {
+  background: linear-gradient(180deg, #0058A8, #003C7A);
+  color: white;
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+}
+
+.aim-titlebar-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.aim-btn {
+  width: 16px;
+  height: 14px;
+  background: var(--y2k-silver);
+  border: 1px outset #fff;
+  font-size: 9px;
+  line-height: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.aim-body {
+  background: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.aim-buddy-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+  background: linear-gradient(135deg, var(--hot-pink), var(--purple));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  border: 3px solid var(--barbie-pink);
+  box-shadow: 0 0 20px rgba(255,20,147,0.5);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255,20,147,0.5); transform: scale(1); }
+  50% { box-shadow: 0 0 40px rgba(255,20,147,0.8); transform: scale(1.05); }
+}
+
+.aim-body h1 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  color: var(--barbie-pink);
+  margin-bottom: 5px;
+  line-height: 1.6;
+}
+
+.aim-body .subtitle {
+  font-size: 20px;
+  color: var(--purple);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.aim-body .bride-name {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 28px;
+  background: linear-gradient(90deg, var(--barbie-pink), var(--purple), var(--hot-pink), var(--cyan));
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+  margin-bottom: 10px;
+  text-shadow: none;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.aim-body .date-info {
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.aim-body .away-message {
+  background: var(--aim-buddy);
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-style: italic;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.away-message .away-label {
+  font-weight: 700;
+  color: var(--aim-blue);
+  font-style: normal;
+  font-size: 11px;
+  font-family: 'VT323', monospace;
+}
+
+.sign-on-btn {
+  background: linear-gradient(180deg, var(--hot-pink), var(--barbie-pink));
+  color: white;
+  border: 2px outset var(--hot-pink);
+  padding: 10px 30px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.1s;
+  display: block;
+  width: 100%;
+}
+.sign-on-btn:active {
+  border-style: inset;
+  transform: translate(1px, 1px);
+}
+
+.aim-statusbar {
+  background: var(--y2k-silver);
+  border-top: 1px solid #808080;
+  padding: 4px 8px;
+  font-family: 'VT323', monospace;
+  font-size: 12px;
+  color: #555;
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ====== NAV ====== */
+.y2k-nav {
+  background: linear-gradient(180deg, #FFE4F0, #FFC0CB);
+  border-bottom: 3px solid var(--barbie-pink);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 33px;
+  z-index: 999;
+}
+
+.nav-link {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--barbie-pink);
+  text-decoration: none;
+  padding: 8px 12px;
+  background: white;
+  border: 2px solid var(--hot-pink);
+  border-radius: 0;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 0 rgba(255,20,147,0.3);
+}
+.nav-link:hover, .nav-link:active {
+  background: var(--barbie-pink);
+  color: white;
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+/* ====== SECTION STYLES ====== */
+.section {
+  padding: 40px 16px;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 14px;
+  color: var(--barbie-pink);
+  margin-bottom: 8px;
+  line-height: 1.8;
+}
+
+.section-header .aim-subhead {
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  color: var(--purple);
+}
+
+.divider {
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 0;
+  letter-spacing: 8px;
+}
+
+/* ====== DAY CARDS (Buddy List Style) ====== */
+.buddy-list {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.buddy-group {
+  margin-bottom: 24px;
+  background: white;
+  border: 2px solid #808080;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.2), inset 1px 1px 0 #fff;
+}
+
+.buddy-group-header {
+  background: linear-gradient(180deg, #0058A8, #003C7A);
+  color: var(--aim-yellow);
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.buddy-group-header .triangle {
+  font-size: 10px;
+  transition: transform 0.2s;
+}
+.buddy-group-header.collapsed .triangle {
+  transform: rotate(-90deg);
+}
+
+.buddy-group-body {
+  padding: 0;
+}
+
+.buddy-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  transition: background 0.2s;
+}
+.buddy-item:hover {
+  background: #FFF0F5;
+}
+.buddy-item:last-child {
+  border-bottom: none;
+}
+
+.buddy-icon-small {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--hot-pink), var(--purple));
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  border: 1px solid var(--barbie-pink);
+}
+
+.buddy-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.buddy-screenname {
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  color: var(--aim-blue);
+  font-weight: 700;
+}
+
+.buddy-time {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--barbie-pink);
+  margin-top: 2px;
+}
+
+.buddy-status {
+  font-size: 13px;
+  color: #555;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.buddy-status .address-link {
+  color: var(--barbie-pink);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.online-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--lime);
+  border-radius: 50%;
+  margin-right: 4px;
+  animation: pulse-dot 1.5s ease infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ====== BARS SECTION ====== */
+.bars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.bar-card {
+  background: white;
+  border: 3px solid var(--hot-pink);
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.bar-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--hot-pink), var(--purple), var(--cyan), var(--hot-pink));
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.bar-card h3 {
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: var(--barbie-pink);
+  margin-bottom: 4px;
+}
+.bar-card .bar-vibe {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.bar-card p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555;
+}
+.bar-card .bar-address {
+  font-size: 11px;
+  color: #999;
+  margin-top: 8px;
+  font-family: 'VT323', monospace;
+}
+
+/* ====== MAP SECTION ====== */
+.map-container {
+  max-width: 500px;
+  margin: 0 auto;
+  border: 3px solid var(--hot-pink);
+  box-shadow: 4px 4px 0 rgba(255,20,147,0.3);
+  overflow: hidden;
+  background: white;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  display: block;
+}
+
+.map-legend {
+  padding: 12px;
+  background: white;
+  border-top: 2px dashed var(--hot-pink);
+}
+
+.map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+.map-legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ====== FOOTER ====== */
+.y2k-footer {
+  background: linear-gradient(180deg, var(--baby-pink), var(--barbie-pink));
+  padding: 30px 16px;
+  text-align: center;
+  border-top: 4px solid var(--yellow);
+}
+
+.footer-ascii {
+  font-family: monospace;
+  font-size: 10px;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  white-space: pre;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+}
+
+.footer-links a {
+  color: var(--aim-yellow);
+  text-decoration: none;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.guestbook-text {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+}
+
+.visitor-counter {
+  margin-top: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: black;
+  padding: 4px 8px;
+  border: 1px solid var(--lime);
+}
+.visitor-counter span {
+  font-family: 'VT323', monospace;
+  color: var(--lime);
+  font-size: 14px;
+}
+
+/* ====== AWAY MESSAGE SECTION ====== */
+.away-section {
+  background:
+    linear-gradient(135deg, rgba(155,89,182,0.1), rgba(255,105,180,0.1)),
+    #FFF5F8;
+}
+
+.away-card {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--aim-buddy);
+  border: 2px solid #808080;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+}
+
+.away-card .away-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.away-card h3 {
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: var(--aim-blue);
+  margin-bottom: 10px;
+}
+
+.away-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  font-style: italic;
+}
+
+.away-card .xoxo {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: var(--barbie-pink);
+  margin-top: 15px;
+  letter-spacing: 3px;
+}
+
+/* ====== GLITTER DIVIDER ====== */
+.glitter-divider {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, transparent, rgba(255,20,147,0.1), transparent);
+}
+
+/* ====== DAY HEADER ====== */
+.day-header {
+  text-align: center;
+  padding: 20px 16px 10px;
+  position: relative;
+}
+
+.day-header h3 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  color: var(--purple);
+  display: inline-block;
+  background: white;
+  padding: 8px 16px;
+  border: 2px dashed var(--hot-pink);
+  line-height: 1.6;
+}
+
+/* ====== TYPING ANIMATION ====== */
+.typing-dots::after {
+  content: '...';
+  animation: typing 1.5s steps(4, end) infinite;
+}
+@keyframes typing {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (min-width: 768px) {
+  .bars-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 700px;
+  }
+  .section { padding: 50px 24px; }
+  .aim-body .bride-name { font-size: 36px; }
+  .section-header h2 { font-size: 16px; }
+}
+
+/* ====== RAINBOW TEXT ====== */
+.rainbow-text {
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow 4s linear infinite;
+}
+@keyframes rainbow {
+  to { background-position: 200% center; }
+}
+
+/* ====== BUTTERFLY DIVIDER ====== */
+.butterfly-divider {
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+  letter-spacing: 12px;
+  opacity: 0.6;
+}
+
+/* ====== SCHEDULE TIMELINE ====== */
+.schedule-note {
+  max-width: 500px;
+  margin: 10px auto 20px;
+  background: #FFFDE7;
+  border: 2px solid var(--yellow);
+  border-left: 6px solid var(--yellow);
+  padding: 12px 16px;
+  font-size: 12px;
+  font-family: 'VT323', monospace;
+  color: #555;
+}
+.schedule-note strong {
+  color: var(--barbie-pink);
+}
+
+/* ====== T9 STYLE TEXT INPUT HINT ====== */
+.t9-hint {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  color: var(--purple);
+  text-align: center;
+  margin-top: 15px;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+/* ====== SONG LYRIC TICKER ====== */
+.lyric-ticker {
+  background: rgba(0,0,0,0.03);
+  padding: 8px;
+  text-align: center;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--purple);
+  border-top: 1px dashed var(--baby-pink);
+  border-bottom: 1px dashed var(--baby-pink);
+}
+
+/* ====== STICKER OVERLAY ====== */
+.sticker {
+  position: absolute;
+  font-size: 30px;
+  opacity: 0.7;
+  pointer-events: none;
+  animation: wobble 3s ease-in-out infinite;
+}
+@keyframes wobble {
+  0%, 100% { transform: rotate(-5deg) scale(1); }
+  50% { transform: rotate(5deg) scale(1.1); }
+}
+
+/* ====== PROFILE SECTION ====== */
+.profile-section {
+  background:
+    radial-gradient(ellipse at top, rgba(255,182,193,0.3), transparent),
+    white;
+}
+
+.profile-card {
+  max-width: 500px;
+  margin: 0 auto;
+  border: 3px solid var(--barbie-pink);
+  overflow: hidden;
+}
+
+.profile-top {
+  background: linear-gradient(135deg, var(--barbie-pink), var(--purple));
+  padding: 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.profile-top::after {
+  content: '~ top 8 bachelorette party ~';
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  display: block;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid white;
+  background: linear-gradient(135deg, var(--yellow), var(--hot-pink));
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.profile-top h3 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 14px;
+}
+
+.profile-top .profile-tagline {
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.profile-details {
+  padding: 16px;
+  background: white;
+}
+
+.profile-row {
+  display: flex;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 8px 0;
+  font-size: 13px;
+}
+
+.profile-label {
+  font-weight: 700;
+  color: var(--barbie-pink);
+  width: 100px;
+  flex-shrink: 0;
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+}
+
+.profile-value {
+  color: #555;
+  flex: 1;
+}
+
+/* ====== LOADING SCREEN ====== */
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--barbie-pink), var(--purple));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-text {
+  font-family: 'VT323', monospace;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.loading-bar-container {
+  width: 200px;
+  height: 20px;
+  background: rgba(255,255,255,0.2);
+  border: 2px solid white;
+  overflow: hidden;
+}
+
+.loading-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--aim-yellow), var(--hot-pink));
+  width: 0;
+  animation: load 2s ease forwards;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  30% { width: 30%; }
+  60% { width: 60%; }
+  80% { width: 80%; }
+  100% { width: 100%; }
+}
+
+.loading-subtext {
+  font-family: 'Press Start 2P', monospace;
+  color: rgba(255,255,255,0.7);
+  font-size: 8px;
+  margin-top: 15px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* ====== RESPONSIVE GRID FIX ====== */
+@media (max-width: 360px) {
+  .aim-body .bride-name { font-size: 22px; }
+  .nav-link { font-size: 7px; padding: 6px 8px; }
+}
+
+/* ====== ACCESSIBILITY ====== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+  <div style="font-size: 50px; margin-bottom: 20px;">💖🦋✨</div>
+  <div class="loading-text">SiGniNg On...</div>
+  <div class="loading-bar-container">
+    <div class="loading-bar"></div>
+  </div>
+  <div class="loading-subtext">
+    ~*~ iZzYsBaCh has entered the chat ~*~
+  </div>
+</div>
+
+<!-- SPARKLE CANVAS -->
+<canvas id="sparkle-canvas"></canvas>
+
+<!-- MARQUEE -->
+<div class="marquee-banner">
+  <div class="marquee-inner">
+    ✨💖 iZzY's BaChElOrEtTe PaRtY 💖✨ &nbsp;&nbsp; HuDsOn, NY &nbsp;&nbsp; MaY 8-10, 2026 &nbsp;&nbsp; 🦋 LaSt FlInG bEfOrE tHe RiNg 🦋 &nbsp;&nbsp; ✨💖 iZzY's BaChElOrEtTe PaRtY 💖✨ &nbsp;&nbsp; HuDsOn, NY &nbsp;&nbsp; MaY 8-10, 2026 &nbsp;&nbsp; 🦋 LaSt FlInG bEfOrE tHe RiNg 🦋 &nbsp;&nbsp;
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="floating-emojis" id="floating-emojis"></div>
+
+  <div class="aim-window">
+    <div class="aim-titlebar">
+      <span>iZzYsBaCh - Buddy List</span>
+      <div class="aim-titlebar-buttons">
+        <div class="aim-btn">_</div>
+        <div class="aim-btn">□</div>
+        <div class="aim-btn">X</div>
+      </div>
+    </div>
+    <div class="aim-body">
+      <div class="aim-buddy-icon">👰</div>
+      <h1>~*~ U aRe InViTeD 2 ~*~</h1>
+      <div class="bride-name">IzZy'S</div>
+      <div class="subtitle">BaCHeLorEtTe WeEkEnD 🦋</div>
+      <div class="date-info">📅 May 8-10, 2026 &nbsp;|&nbsp; 📍 Hudson, NY</div>
+      <div class="away-message">
+        <div class="away-label">✨ Auto Response from BrIdE2bE_iZzY:</div>
+        <br>
+        "i'M nOt HeRe RiGhT nOw... pRoBaBlY oUt CeLeBrAtInG mY LaSt DaYs aS a SiNgLe LaDy!! 💍✨ LeAvE mE a MeSsAgE aNd I'Ll GeT BaCk 2 u AfTeR tHe HoNeYmOoN xOxO 🦋💖"
+      </div>
+      <button class="sign-on-btn" onclick="document.getElementById('itinerary').scrollIntoView({behavior:'smooth'})">
+        ✨ Sign On 2 Party ✨
+      </button>
+    </div>
+    <div class="aim-statusbar">
+      <span class="online-dot"></span> All bridesmaids online &nbsp;|&nbsp; <span class="blink">_</span>
+    </div>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="y2k-nav" id="nav">
+  <a href="#itinerary" class="nav-link">📋 iTiNeRaRy</a>
+  <a href="#bars" class="nav-link">🍸 BaRs</a>
+  <a href="#map" class="nav-link">🗺️ MaP</a>
+  <a href="#bride" class="nav-link">👰 tHe BrIdE</a>
+</nav>
+
+<!-- ====== ITINERARY SECTION ====== -->
+<section class="section" id="itinerary" style="background: linear-gradient(180deg, #FFF5F8, #FFE4F0);">
+
+  <div class="section-header">
+    <h2>📋 tHe iTiNeRaRy 📋</h2>
+    <div class="aim-subhead">~*~ 3 dAyS oF pUrE gIrL pOwEr ~*~</div>
+  </div>
+
+  <div class="schedule-note">
+    <strong>** IMPORTANT **</strong> All tiMeS r approxim8. We r on BRIDE TIME this weekend, bb. The only rule is: have fun or else. 💅
+  </div>
+
+  <!-- FRIDAY -->
+  <div class="day-header">
+    <h3>🌟 FriDaY, MaY 8tH 🌟<br>~ aRriVaL DaY ~</h3>
+  </div>
+
+  <div class="buddy-list">
+    <div class="buddy-group">
+      <div class="buddy-group-header">
+        <span class="triangle">▼</span>
+        FriDaY nIgHt CrEw (2 Online)
+      </div>
+      <div class="buddy-group-body">
+        <div class="buddy-item">
+          <div class="buddy-icon-small">🏠</div>
+          <div class="buddy-info">
+            <div class="buddy-screenname"><span class="online-dot"></span>AiRbNb ChEcK-iN</div>
+            <div class="buddy-time">~ aRRiVe WhEn U cAn ~</div>
+            <div class="buddy-status">
+              Drop ur bags, claim ur bed, get settled in!! The Bach Pad is located at
+              <a href="https://maps.google.com/?q=619+Union+Street+Hudson+NY" target="_blank" class="address-link">619 Union Street, Hudson, NY</a> 🏡
+            </div>
+          </div>
+        </div>
+
+        <div class="buddy-item">
+          <div class="buddy-icon-small">🍝</div>
+          <div class="buddy-info">
+            <div class="buddy-screenname"><span class="online-dot"></span>DiNnEr @ tHe AiRbNb</div>
+            <div class="buddy-time">~7:00 PM</div>
+            <div class="buddy-status">
+              We're doing dinner IN for the first night! Cozy vibes, matching PJs encouraged. Think wine, cheese boards, and catching up with ur girlz. We will figure out food sitch closer to the date 🍕🥗🧀
+            </div>
+          </div>
+        </div>
+
+        <div class="buddy-item">
+          <div class="buddy-icon-small">🍸</div>
+          <div class="buddy-info">
+            <div class="buddy-screenname"><span class="online-dot"></span>BaRs AfTeR!! 🎉</div>
+            <div class="buddy-time">~9:30 PM onward</div>
+            <div class="buddy-status">
+              Once we've fueled up, we're hitting Warren Street! See the bar guide below for the deets. Night 1 energy: getting the lay of the land + main character vibes ONLY 💃
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="butterfly-divider">🦋 🦋 🦋 🦋 🦋</div>
+
+  <!-- SATURDAY -->
+  <div class="day-header">
+    <h3>🌟 SaTuRdAy, MaY 9tH 🌟<br>~ tHe MaIn EvEnT ~</h3>
+  </div>
+
+  <div class="buddy-list">
+    <div class="buddy-group">
+      <div class="buddy-group-header">
+        <span class="triangle">▼</span>
+        SaTuRdAy ViBeS (5 Online)
+      </div>
+      <div class="buddy-group-body">
+        <div class="buddy-item">
+          <div class="buddy-icon-small">☀️</div>
+          <div class="buddy-info">
+            <div class="buddy-screenname"><span class="online-dot"></span>MoRnInG: ChOoSe Ur OwN aDvEnTuRe!</div>
+            <div class="buddy-time">MoRnInG ~ 12:00 PM</div>
+            <div class="buddy-status">
+              Sleep in, go thrifting on Warren St, find a cute coffee shop, hit a spa, grab brunch... whatever ur heart desires!! Hudson is your oyster, babe. Just be ready by NOON. ☕🛍️💆‍♀️
+            </div>
+          </div>
+        </div>
+
+        <div class="buddy-item">
+          <div class="buddy-icon-small">🍷</div>
+          <div class="buddy-info">
+            <div class="buddy-screenname"><span class="online-dot"></span>WiNe TaStInG @ HuDsOn ChAtHaM</div>
+            <div class="buddy-time">12:00 PM - 2:30 PM</div>
+            <div class="buddy-status">
+              THE main event!! We're going to <strong>Hudson-Chatham Winery</strong> in Ghent, NY for a guided wine tasting. Columbia County's first winery!! They grow 18 varietals on site, serve artisan cheeses & have gorgeous fire pits + lawn vibes. Designated drivers are QUEENS. 👑🍇<br><br>
+              <a href="https://maps.google.com/?q=1900+Route+66+Ghent+NY" target="_blank" class="address-link">📍 1900 Route 66, Ghent, NY</a><br>
+              <span style="font-size:11px; color: #999;">~20 min drive from the Airbnb</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="buddy-item">
+          <div class="buddy-icon-small">🛋️</div>
+          <div class="buddy-info">
+            <div class="buddy-screenname"><span class="online-dot"></span>SoBeR uP @ tHe AiRbNb</div>
+            <div class="buddy-time">2:30 PM - 5:00 PM</div>
+            <div class="buddy-status">
+              Back to the Airbnb for a lil R&R before dinner. Nap it off, do face masks, get cute, pre-game responsibly 💅🫧
+            </div>
+          </div>
+        </div>
+
+        <div class="buddy-item">
+          <div class="buddy-icon-small">🍽️</div>
+          <div class="buddy-info">
+            <div class="buddy-screenname"><span class="online-dot"></span>DiNnEr @ FeAsT & FlOrEt</div>
+            <div class="buddy-time">5:00 PM</div>
+            <div class="buddy-status">
+              Fancy dinner at <strong>Feast & Floret</strong> - a regional Italian restaurant w/ Tuscan flair!! All pasta made in house 🤤. PLUS they have a literal flower cart where you can make bouquets during dinner?! The vibes are IMMACULATE.<br><br>
+              <a href="https://maps.google.com/?q=13+South+3rd+Street+Hudson+NY" target="_blank" class="address-link">📍 13 South 3rd Street, Hudson, NY</a><br>
+              <span style="font-size: 11px; color: #999;">Reservations recommended!! 📞 (518) 822-1500</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="buddy-item">
+          <div class="buddy-icon-small">🪩</div>
+          <div class="buddy-info">
+            <div class="buddy-screenname"><span class="online-dot"></span>GoInG oUt AgAiN!! Pt. 2</div>
+            <div class="buddy-time">~8:00 PM onward</div>
+            <div class="buddy-status">
+              Saturday night = THE night. We've practiced Friday. Now we go HARD. Bars, dancing, karaoke, whatever the night takes us. Main character energy x1000 🪩💃✨
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="butterfly-divider">🦋 🦋 🦋 🦋 🦋</div>
+
+  <!-- SUNDAY -->
+  <div class="day-header">
+    <h3>🌟 SuNdAy, MaY 10tH 🌟<br>~ sUnDaY fUnDaY ~</h3>
+  </div>
+
+  <div class="buddy-list">
+    <div class="buddy-group">
+      <div class="buddy-group-header">
+        <span class="triangle">▼</span>
+        SuNdAy MoRnInG (1 Online)
+      </div>
+      <div class="buddy-group-body">
+        <div class="buddy-item">
+          <div class="buddy-icon-small">🥐</div>
+          <div class="buddy-info">
+            <div class="buddy-screenname"><span class="online-dot"></span>BrEaKfAsT @ MeL tHe BaKeRy</div>
+            <div class="buddy-time">MoRnInG</div>
+            <div class="buddy-status">
+              We're ending this weekend RIGHT at <strong>Mel the Bakery</strong> - a James Beard Award finalist!! Scandinavian-inspired sourdough breads, pastries & light fare made from local organic grains. It's giving main character brunch energy.<br><br>
+              <a href="https://maps.google.com/?q=324+Warren+St+Hudson+NY" target="_blank" class="address-link">📍 324 Warren Street, Hudson, NY</a><br>
+              <span style="font-size: 11px; color: #999;">Open Wed-Sun, 9 AM - 3 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="buddy-item">
+          <div class="buddy-icon-small">🚗</div>
+          <div class="buddy-info">
+            <div class="buddy-screenname"><span class="online-dot"></span>ChEcK oUt & HeAd HoMe</div>
+            <div class="buddy-time">AfTeRnOoN</div>
+            <div class="buddy-status">
+              Pack up, say ur goodbyes (try not 2 cry), and head home. We did it, girlz!! Izzy's last hurrah is officially in the books 💖💍🥹
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ====== BARS SECTION ====== -->
+<section class="section" id="bars" style="background: linear-gradient(180deg, #F3E5F5, #FCE4EC);">
+
+  <div class="section-header">
+    <h2>🍸 bAr GuIdE 🍸</h2>
+    <div class="aim-subhead">~*~ HuDsOn NiGhTLiFe DiReCtOrY ~*~</div>
+    <div class="divider">✨🦋✨🦋✨</div>
+  </div>
+
+  <div class="schedule-note">
+    <strong>** PSA **</strong> All bars r within walking distance or a short ride from Warren St. PLS drink responsibly... JK but also yes. Water is ur best friend. 💧
+  </div>
+
+  <div class="bars-grid">
+    <div class="bar-card">
+      <h3>🕯️ The Maker Lounge</h3>
+      <div class="bar-vibe">~ fAnCy GiRl ViBeS ~</div>
+      <p>THE cocktail spot. It's in a converted 19th century carriage house with leather walls, grand ceilings & a hand-carved fireplace. Craft cocktails, wine & savory plates. Very "I summer in the Hamptons" energy.</p>
+      <div class="bar-address">📍 302 Warren St &nbsp;|&nbsp; Fri-Sat til 11PM</div>
+    </div>
+
+    <div class="bar-card">
+      <h3>🌙 The Half Moon</h3>
+      <div class="bar-vibe">~ DaNcE pArTy CeNtRaL ~</div>
+      <p>Dance parties, concerts, karaoke nights AND a pizzeria?? Say less. Pool tables, late night food, live bands on weekends. This is THE spot for when u wanna let loose.</p>
+      <div class="bar-address">📍 48 S Front St &nbsp;|&nbsp; Fri-Sat til 1AM 🍕</div>
+    </div>
+
+    <div class="bar-card">
+      <h3>🎵 Wunderbar</h3>
+      <div class="bar-vibe">~ LiVe MuSiC LoVeR ~</div>
+      <p>At the top of Warren St with live bands on Saturday nights. Chill vibes, good drinks, very "we just stumbled into the coolest spot" energy.</p>
+      <div class="bar-address">📍 Top of Warren St &nbsp;|&nbsp; Live bands Saturdays</div>
+    </div>
+
+    <div class="bar-card">
+      <h3>🎭 Club Helsinki</h3>
+      <div class="bar-vibe">~ MuSiC vEnUe QuEeN ~</div>
+      <p>An actual music venue where you can DANCE. Part of Helsinki restaurant. If there's a show happening our weekend... we're going. No questions asked.</p>
+      <div class="bar-address">📍 405 Columbia St &nbsp;|&nbsp; Check schedule!</div>
+    </div>
+
+    <div class="bar-card">
+      <h3>🍷 Bar Bene</h3>
+      <div class="bar-vibe">~ WiNe GiRl ErA ~</div>
+      <p>A cozy wine bar for when the group needs a chill moment between the chaos. Great wine selection, intimate atmosphere. Perfect for deep convos about love & life.</p>
+      <div class="bar-address">📍 Warren St area</div>
+    </div>
+
+    <div class="bar-card">
+      <h3>🍹 Red Dot Restaurant & Bar</h3>
+      <div class="bar-vibe">~ LoCAl FaVoRiTe ~</div>
+      <p>Vibrant local spot where flavors meet cozy vibes. Good for a drink + bite combo. Very "we're basically locals now" energy after one visit.</p>
+      <div class="bar-address">📍 Warren St area</div>
+    </div>
+  </div>
+
+  <div class="t9-hint" style="margin-top: 20px;">
+    ** tXt "BARS" 2 tHe GrOuP cHaT **<br>
+    2 VoTe On Ur tOp PiCkS 📱
+  </div>
+
+</section>
+
+
+<!-- ====== MAP SECTION ====== -->
+<section class="section" id="map" style="background: linear-gradient(180deg, #E8F5E9, #FFF3E0, #FCE4EC);">
+
+  <div class="section-header">
+    <h2>🗺️ tHe MaP 🗺️</h2>
+    <div class="aim-subhead">~*~ sO u DoN'T gEt LoSt, bAbE ~*~</div>
+  </div>
+
+  <div class="map-container">
+    <iframe
+      src="https://maps.google.com/maps?q=619+Union+Street+Hudson+NY+12534&t=&z=14&ie=UTF8&iwloc=&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Hudson NY Map"
+      allow="fullscreen">
+    </iframe>
+    <div class="map-legend">
+      <div style="font-family:'Press Start 2P',monospace;font-size:8px;color:var(--barbie-pink);margin-bottom:8px;">KEY LOCATIONS:</div>
+      <div class="map-legend-item">
+        <div class="map-legend-dot" style="background: var(--barbie-pink);"></div>
+        <span><strong>Airbnb</strong> - 619 Union St, Hudson, NY</span>
+      </div>
+      <div class="map-legend-item">
+        <div class="map-legend-dot" style="background: var(--purple);"></div>
+        <span><strong>Hudson-Chatham Winery</strong> - 1900 Rte 66, Ghent, NY (~20 min)</span>
+      </div>
+      <div class="map-legend-item">
+        <div class="map-legend-dot" style="background: var(--lime);"></div>
+        <span><strong>Feast & Floret</strong> - 13 S 3rd St, Hudson, NY</span>
+      </div>
+      <div class="map-legend-item">
+        <div class="map-legend-dot" style="background: var(--cyan);"></div>
+        <span><strong>Mel the Bakery</strong> - 324 Warren St, Hudson, NY</span>
+      </div>
+      <div class="map-legend-item">
+        <div class="map-legend-dot" style="background: var(--yellow);"></div>
+        <span><strong>The Maker</strong> - 302 Warren St, Hudson, NY</span>
+      </div>
+      <div class="map-legend-item">
+        <div class="map-legend-dot" style="background: var(--hot-pink);"></div>
+        <span><strong>The Half Moon</strong> - 48 S Front St, Hudson, NY</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="t9-hint" style="margin-top: 15px;">
+    💡 PrO tIp: EvErYtHiNg On WaRrEn St Is WaLkAbLe!<br>
+    tHe WiNeRy Is ThE OnLy DrIvE (~20 mIn) 🚗
+  </div>
+
+</section>
+
+
+<!-- ====== BRIDE PROFILE ====== -->
+<section class="section profile-section" id="bride">
+
+  <div class="section-header">
+    <h2>👰 tHe BrIdE 👰</h2>
+    <div class="aim-subhead">~*~ hEr MySpAcE pRoFiLe ~*~</div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-top">
+      <div class="profile-avatar">👰</div>
+      <h3>IzZy</h3>
+      <div class="profile-tagline">"LiViNg My BeSt LiFe b4 WiFe LiFe" 💍</div>
+    </div>
+    <div class="profile-details">
+      <div class="profile-row">
+        <div class="profile-label">Status:</div>
+        <div class="profile-value">Bride-to-Be!! 💍✨</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">Mood:</div>
+        <div class="profile-value">Excited / Overwhelmed / Ready 2 Party</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">Location:</div>
+        <div class="profile-value">Hudson, NY (for the weekend!!)</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">Song:</div>
+        <div class="profile-value">Anything that makes u wanna DANCE 🎵💃</div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">Vibe:</div>
+        <div class="profile-value">2000s girly pop meets Hudson Valley chic</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ====== AWAY MESSAGE CLOSING ====== -->
+<section class="section away-section">
+  <div class="away-card">
+    <div class="away-icon">🦋</div>
+    <h3>~ aWaY mEsSaGe ~</h3>
+    <p>
+      "gOnE 2 cElEbRaTe mY gIrL iZzY... 💖<br>
+      bRb NeVeR lOl<br><br>
+      iF tHiS iS aN eMeRgEnCy... iT cAn WaIt.<br>
+      wE'rE bUsY mAkInG mEmOrIeS ✨🍷🦋"
+    </p>
+    <div class="xoxo">xOxO gOsSiP gIrL... jK iT's JuSt uS 💋</div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="y2k-footer">
+  <div class="footer-ascii">
+   _  _  _
+  |_||_||_|  iZzY's bAcH 2026
+  |_||_||_|  hUdSoN, nY
+  </div>
+
+  <div class="footer-links">
+    <a href="#home">🏠 HoMe</a>
+    <a href="#itinerary">📋 PlAnS</a>
+    <a href="#bars">🍸 BaRs</a>
+    <a href="#map">🗺️ MaP</a>
+  </div>
+
+  <div class="guestbook-text">
+    ~*~ MaDe WiTh 💖 4 iZzY ~*~<br><br>
+    "DoN't LeT aNyOnE EvEr MaKe U fEeL<br>
+    LiKe u DoN't DeSeRvE wHaT u WaNt"<br><br>
+    bEsT vIeWeD oN uR sIdEkIcK oR rAzR 📱<br>
+    © 2026 iZzYsBaCh aWaY tEaM
+  </div>
+
+  <div class="visitor-counter">
+    <span>👁️ ViSiToRs: </span>
+    <span id="visitor-count">000420</span>
+  </div>
+</footer>
+
+<!-- ====== JAVASCRIPT ====== -->
+<script>
+// Loading screen
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loading-screen').classList.add('hidden');
+  }, 2200);
+});
+
+// Floating emojis
+const emojis = ['💖', '🦋', '✨', '💍', '🌸', '💅', '🍸', '🎀', '⭐', '💜', '🌟', '👑'];
+const container = document.getElementById('floating-emojis');
+
+function createFloatingEmoji() {
+  const emoji = document.createElement('div');
+  emoji.className = 'floating-emoji';
+  emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+  emoji.style.left = Math.random() * 100 + '%';
+  emoji.style.animationDuration = (6 + Math.random() * 6) + 's';
+  emoji.style.animationDelay = Math.random() * 2 + 's';
+  emoji.style.fontSize = (16 + Math.random() * 20) + 'px';
+  container.appendChild(emoji);
+
+  setTimeout(() => emoji.remove(), 14000);
+}
+
+setInterval(createFloatingEmoji, 800);
+
+// Sparkle cursor trail - only on devices with a mouse (no touch-only)
+const isTouchOnly = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+const canvas = document.getElementById('sparkle-canvas');
+const ctx = canvas.getContext('2d');
+let sparkles = [];
+
+if (!isTouchOnly) {
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  document.addEventListener('mousemove', (e) => {
+    for (let i = 0; i < 3; i++) {
+      sparkles.push({
+        x: e.clientX + (Math.random() - 0.5) * 20,
+        y: e.clientY + (Math.random() - 0.5) * 20,
+        size: Math.random() * 4 + 1,
+        life: 1,
+        color: ['#FF69B4', '#FFD700', '#87CEEB', '#FF1493', '#9B59B6'][Math.floor(Math.random() * 5)],
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2 - 1
+      });
+    }
+  });
+
+  function drawSparkles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    sparkles = sparkles.filter(s => s.life > 0);
+
+    sparkles.forEach(s => {
+      ctx.save();
+      ctx.globalAlpha = s.life;
+      ctx.fillStyle = s.color;
+      ctx.translate(s.x, s.y);
+      ctx.rotate(s.life * Math.PI);
+
+      // Draw star shape
+      ctx.beginPath();
+      for (let i = 0; i < 5; i++) {
+        const angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
+        const r = s.size * s.life;
+        if (i === 0) ctx.moveTo(Math.cos(angle) * r, Math.sin(angle) * r);
+        else ctx.lineTo(Math.cos(angle) * r, Math.sin(angle) * r);
+      }
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.restore();
+
+      s.x += s.vx;
+      s.y += s.vy;
+      s.life -= 0.02;
+    });
+
+    requestAnimationFrame(drawSparkles);
+  }
+  drawSparkles();
+} else {
+  // Hide the canvas on touch devices so it doesn't interfere
+  canvas.style.display = 'none';
+}
+
+// Visitor counter animation
+let count = 0;
+const target = 420;
+const counterEl = document.getElementById('visitor-count');
+const counterInterval = setInterval(() => {
+  count += Math.ceil(target / 50);
+  if (count >= target) {
+    count = target;
+    clearInterval(counterInterval);
+  }
+  counterEl.textContent = String(count).padStart(6, '0');
+}, 60);
+
+// Buddy group collapse toggle
+document.querySelectorAll('.buddy-group-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const isCollapsed = header.classList.toggle('collapsed');
+    const body = header.nextElementSibling;
+    body.style.display = isCollapsed ? 'none' : 'block';
+  });
+});
+
+// Konami code easter egg
+let konamiIndex = 0;
+const konami = [38,38,40,40,37,39,37,39,66,65];
+document.addEventListener('keydown', (e) => {
+  if (e.keyCode === konami[konamiIndex]) {
+    konamiIndex++;
+    if (konamiIndex === konami.length) {
+      document.body.style.animation = 'rainbow 2s linear infinite';
+      alert('~*~ U fOuNd ThE sEcReT!! iZzY iS tHe BeSt BrIdE eVeR!! ~*~ 🦋💖✨');
+      konamiIndex = 0;
+    }
+  } else {
+    konamiIndex = 0;
+  }
+});
+</script>
+
+</body>
+</html>
