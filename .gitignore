@@ -1,0 +1,11 @@
+# Unencrypted source - NEVER commit this
+_source.html
+
+# Dependencies
+node_modules/
+
+# StatiCrypt temp output
+encrypted/
+
+# StatiCrypt config (contains salt, not secret but not needed in repo)
+.staticrypt.json

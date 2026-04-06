@@ -1,0 +1,17 @@
+{
+  "name": "izzy-bach",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "staticrypt _source.html -p REDACTED --short -d encrypted -t password_template.html --template-title \"~*~iZzYsBaCh~*~\" --template-button \"✨ SiGn On 2 PaRtY ✨\" --template-placeholder \"eNtEr PaSsWoRd...\" --template-error \"wRoNg PaSsWoRd bAbE!!\" --remember 30 --template-remember \"ReMeMbEr Me On ThIs DeViCe 💖\" && mv encrypted/_source.html index.html && rmdir encrypted",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "staticrypt": "^3.5.4"
+  }
+}
