@@ -1,6 +1,5 @@
 /**
  * Password-protect _source.html using CryptoJS AES.
- * Usage: STATICRYPT_PW=REDACTED node build.js
  * The password is passed via env var so it never appears in committed files.
  */
 const fs = require('fs');
